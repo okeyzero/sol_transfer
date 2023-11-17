@@ -131,7 +131,7 @@ async function main() {
     recentBlockhash.blockhash,
     fromPrivateKey,
     addresses,
-    0.001
+    amount_to_receiver
   );
   console.log(`生成 ${txArray.length} 个交易`);
 
@@ -151,6 +151,7 @@ async function main() {
 }
 
 const fromPrivateKey = process.env.privateKey;
+const amount_to_receiver = process.env.amount;
 let addresses = parseFile("myAddress.txt");
 console.log(`加载 ${addresses.length} 个钱包`);
 main();
